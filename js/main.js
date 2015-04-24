@@ -2,6 +2,10 @@
     var CONTENTFUL_PUB_URL = 'https://cdn.contentful.com/spaces/ytivo3qay7d1/entries?access_token=605db5b74362fa9a550103eb2a64e4c75678ea9db025ee622ddcc69766f81879';
 
     $(function(){
+        //Materialize stuff first
+        $(".button-collapse").sideNav();
+
+        //And now mine
         var template = $('#card-reveal-template').html(), cards = $('.cards');
         M.parse(template);
         $.get(CONTENTFUL_PUB_URL, function(data){
