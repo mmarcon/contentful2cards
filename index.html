@@ -1,64 +1,52 @@
- <!DOCTYPE html>
- <html>
- <head>
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
 
 <body>
-  <div class="container">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">x</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">About</a></li>
-          <li><a href="components.html">Me</a></li>
-          <li><a href="javascript.html">Github</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="row">
-      <div class="col s12 m7">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://placekitten.com/g/300/200">
-            <span class="card-title">Card Title</span>
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center small mdi-maps-beenhere"></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+<!--                     <li><a href="sass.html">About</a></li> -->
+                    <li><a href="http://marcon.me">Me</a></li>
+                    <li><a href="https://github.com/mmarcon/contentful2cards">Github</a></li>
+                </ul>
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href='#'>This is a link</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row cards">
+
+        </div>            <!--Import jQuery before materialize.js-->
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="bower_components/mustache.js/mustache.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script id="card-reveal-template" type="x-tmpl-mustache">
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator lazy-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://image.maps.api.here.com/mia/1.6/mapview?app_id=1220G0MOv2PBLjLq6tex&app_code=0MM0Lr7hPyqfv3GiPmBOyg&c={{location}}&w=1024&h=768&z=16&t=2">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{name}} <i class="mdi-navigation-more-vert right"></i></span>
+                    <p><a href="https://www.here.com/?map={{location}},16,terrain" target="_blank">View on here.com</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{name}} <i class="mdi-navigation-close right"></i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://placekitten.com/g/300/200">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href='#'>This is a link</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
-    </body>
-    </html>
+    </script>
+</body>
+</html>
