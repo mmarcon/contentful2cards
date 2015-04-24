@@ -1,4 +1,4 @@
-;(function($, M, w, d){
+;(function($, M, md, w, d){
     var CONTENTFUL_PUB_URL = 'https://cdn.contentful.com/spaces/ytivo3qay7d1/entries?access_token=605db5b74362fa9a550103eb2a64e4c75678ea9db025ee622ddcc69766f81879';
 
     $(function(){
@@ -16,11 +16,12 @@
             data.items.forEach(function(i){
                 var place = {
                     name: i.fields.name,
-                    location: i.fields.location.lat + ',' + i.fields.location.lon
+                    location: i.fields.location.lat + ',' + i.fields.location.lon,
+                    description: i.fields.description ? md(i.fields.description) : 'Coming soon'
                 };
                 rendered += M.render(template, place);
             });
             cards.html(rendered);
         });
     });
-}(jQuery, Mustache, window, document));
+}(jQuery, Mustache, marked, window, document));
